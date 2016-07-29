@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/main_listview_footer"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:background="#ECEFF1"
+             android:gravity="center"
+             android:padding="20dp">
+
+    <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:clickable="false"
+        app:mlpb_progress_color="#ff0099cc"
+        app:mlpb_progress_stoke_width="2.5dp"/>
+
+    <TextView
+        android:id="@+id/main_listview_footer_errtv"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="网络连接错误,加载失败"
+        android:visibility="gone"/>
+
+</FrameLayout>

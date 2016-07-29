@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar" parent="AppBaseTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--将布局的内容延伸到状态栏-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+    </style>
+
+    <!--statusBarColor设置为不透明-->
+    <style name="AppTheme.NoActionBar.NoTransparent" parent="AppTheme.NoActionBar">
+        <!--将布局的内容延伸到状态栏-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!--无标题栏,全屏显示-->
+    <style name="AppTheme.NoActionBar.FullScreen" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>

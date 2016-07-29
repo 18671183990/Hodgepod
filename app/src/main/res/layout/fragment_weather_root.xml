@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/weather_root_swipelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/weather_root_linear_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/weather_root_tv_cityname"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:textColor="@color/color_white"
+                        android:textSize="20sp"/>
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.1dp"-->
+                    <!--android:background="@color/text_color_white"/>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="实时天气"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <!--实时信息-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_today"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="时间"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_nongli"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="农历"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_weekly"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="星期"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_weather"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="多云"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_temperature"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="29°"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_fengli"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="北风"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_fengli_level"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="1级"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_realtime_updatetime"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="更新时间"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
+                    <!--实时信息-->
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.1dp"-->
+                    <!--android:background="@color/text_color_white"/>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="未来7天天气"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <!--日期-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="2016-7-9"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_date6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <!--农历-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="农历"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_nongli6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <!--星期-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="周六"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_week6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
+
+                    <!--天气-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="多云"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_weather6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <!--温度-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="34°"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_temperature6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <!--风力-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli0"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="微风"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli5"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/weather_root_tv_future_fengli6"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+
+</FrameLayout>
